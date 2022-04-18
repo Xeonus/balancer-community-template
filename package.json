@@ -1,0 +1,67 @@
+{
+  "name": "balancer-community-template",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.12.1",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "@mui/icons-material": "^5.6.1",
+    "@mui/styles": "^5.2.3",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "apollo-link": "^1.2.14",
+    "apollo-link-http": "^1.5.17",
+    "apollo-link-rest": "^0.8.0-beta.0",
+    "apollo-link-retry": "^2.2.16",
+    "ethers": "^5.6.2",
+    "firebase": "^8.10.0",
+    "glob-parent": "^6.0.1",
+    "graphql": "^15.5.2",
+    "graphql-anywhere": "^4.1.0",
+    "history": "^5.1.0",
+    "plotly.js": "^2.8.3",
+    "qs": "^6.10.1",
+    "react": "^17.0.2",
+    "react-adopt": "^0.6.0",
+    "react-chrono": "^1.11.0",
+    "react-countup": "^5.2.0",
+    "react-device-detect": "^2.2.2",
+    "react-dom": "^17.0.2",
+    "react-latex": "^2.0.0",
+    "react-latex-next": "^2.1.0",
+    "react-markdown": "^7.0.1",
+    "react-plotly.js": "^2.5.1",
+    "react-rounded-image": "^2.0.13",
+    "react-router-dom": "^6.1.1",
+    "react-scripts": "^4.0.3",
+    "recharts": "^2.1.2",
+    "remark-math": "^5.1.0",
+    "universal-cookie": "^4.0.4",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
