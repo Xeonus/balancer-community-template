@@ -21,7 +21,7 @@ This project aims to provide an easy to use template for community members to cr
 
 ## Depencencies
 This project uses following third-party packages / services:
-* Material-UI v5.6+: https://mui.com
+* Material-UI v5.1+: https://mui.com (Important: we still use mui/styles here!)
 * React-router: https://reactrouter.com/
 * React-Device-Detect
 
