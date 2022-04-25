@@ -43,7 +43,7 @@ export default function HerokuStatus(props) {
         </div>);
     if (jsonData) {
         return (
-            <NotionRenderer blockMap={jsonData} ></NotionRenderer>
+            <NotionRenderer blockMap={jsonData} rootPageId={'balancergrants'}></NotionRenderer>
         );
     } else {
         return (
