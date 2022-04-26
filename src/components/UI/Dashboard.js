@@ -21,7 +21,7 @@ import { IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuDrawer from './MenuDrawer/MenuDrawer';
 import Home from './../pages/home/Home';
-import BalancerDAO from './../pages/balancerDAO/BalancerDAO';
+import Notion from '../pages/notion/Notion';
 
 
 //Toggle color mode -> light, dark mode
@@ -104,6 +104,13 @@ export default function Dashboard() {
         <StyledEngineProvider injectFirst>
             <ColorModeContext.Provider value={colorMode}>
                 <ThemeProvider theme={theme} >
+                <Box
+                        sx={{
+                            display: 'flexStart',
+                            flexDirection: 'column',
+                            minHeight: '85vh',
+                        }}
+                    >
                     <AppBar position="static" color={"secondary"} background="transparent" style={{ margin: -0 }} >
                         <Toolbar className={classes.toolBar}>
                             <Box display="flex" alignItems="center" >
@@ -118,10 +125,10 @@ export default function Dashboard() {
                                         </Typography>
 
                                     </Box> : null}
-                                <Typography ml={1} variant="caption">Template</Typography>
+                                <Typography ml={1} mr={2} variant="caption">Template</Typography>
                             </Box>
                             {isBrowser ?
-                                <Box display="flex" alignItems="center" justifyContent="center" flexGrow={1}>
+                                <Box display="flexStart" alignItems="center" justifyContent="center" flexGrow={1}>
                                     <Box alignItems="center" justifyContent="center">
                                         <NavBar classes={classes} />
                                     </Box>
@@ -150,19 +157,36 @@ export default function Dashboard() {
                             <Routes>
                                 <Route path="/" element={<Navigate replace to="/home" />} />
                                 <Route path="home" element={<Home classes={classes} darkState={(mode === 'dark') ? true : false} />} />
-                                <Route path="balancerDAO" element={<BalancerDAO classes={classes} darkState={(mode === 'dark') ? true : false} />} />
-                                <Route path='/balancerTools' component={() => {
+                                <Route path="notionIntegration" element={<Notion classes={classes} darkState={(mode === 'dark') ? true : false} />} />
+                                <Route path='balancerTools' component={() => {
                                     window.location.href = 'https://balancer.tools/';
                                     return null;
                                 }} />
                             </Routes>
-                            <Grid item xs={12} component="span" flex="1">
-                                <Box p={1}>
-                                    <Footer className={classes.footer}></Footer>
-                                </Box>
-                            </Grid>
                         </Grid>
                     </Container>
+                    </Box>
+                    <Box
+                        component="footer"
+                        sx={{
+                            py: 2,
+                            px: 2,
+                            mt: 'auto',
+                            minHeight: '15vh',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            backgroundColor: (theme) =>
+                                theme.palette.mode === 'light'
+                                    ? theme.palette.grey[200]
+                                    : theme.palette.grey[800],
+                        }}
+                    >
+                        <Container className={classes.container}>
+                            <Grid item xs={12} component="span" flex="1">
+                                    <Footer className={classes.footer}></Footer>
+                            </Grid>
+                        </Container>
+                    </Box>
                 </ThemeProvider>
             </ColorModeContext.Provider>
         </StyledEngineProvider>

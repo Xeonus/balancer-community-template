@@ -1,18 +1,22 @@
 import React from "react";
-import { Button} from "@mui/material";
-import { NavLink, useLocation } from "react-router-dom";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import { NavLink, Link } from "react-router-dom";
 //Navigation bar
 export default function NavBar(props) {
 
-    //Obtain actively selcted route
-    const location = useLocation();
+    const [value, setValue] = React.useState("home");
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
     return (
         <div>
-            <Button color="primary" className={location.pathname === '/home' ? props.classes.navButton : null} component={NavLink} to={'/home'}>Home</Button>
-            <Button color="primary" className={location.pathname === '/balancerDAO' ? props.classes.navButton : null} component={NavLink} to={'/balancerDAO'}>Balancer DAO</Button>
-            <Button color= "primary" onClick={() => window.open('https://balancer.tools/')}>balancer.tools</Button>
-            
+            <Tabs value={value} onChange={handleChange}>
+                <Tab color="primary" component={NavLink} to={'/home'} value={"home"} label="home" />
+                <Tab component={Link} to={'/notionIntegration'} value={"notion"} label="Notion" />
+                <Tab onClick={() => window.open('https://balancer.tools/')} value={"balancerTools"} label="balancer.tools" />
+            </Tabs>
         </div>
     );
 }

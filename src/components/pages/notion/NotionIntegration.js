@@ -9,7 +9,7 @@ import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 
 
-export default function HerokuStatus(props) {
+export default function NotionIntegration(props) {
 
     const [loading, setLoading] = useState(false);
     const [jsonData, setJsonData] = useState("");
@@ -43,7 +43,7 @@ export default function HerokuStatus(props) {
         </div>);
     if (jsonData) {
         return (
-            <NotionRenderer blockMap={jsonData} rootPageId={'balancergrants'}></NotionRenderer>
+            <NotionRenderer blockMap={jsonData}></NotionRenderer>
         );
     } else {
         return (
