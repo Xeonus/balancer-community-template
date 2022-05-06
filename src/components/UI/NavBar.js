@@ -1,7 +1,7 @@
 import React from "react";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { NavLink, Link, useLocation} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 //Navigation bar
 export default function NavBar(props) {
 
@@ -23,8 +23,9 @@ export default function NavBar(props) {
     return (
         <div>
             <Tabs value={value} onChange={handleChange}>
-                <Tab color="primary" component={NavLink} to={'/home'} value={"home"} label="home" />
-                <Tab component={Link} to={'/notionIntegration'} value={"notionIntegration"} label="Notion" />
+                <Tab color="primary" component={Link} to={'/home'} value={"home"} label="home" />
+                <Tab component={Link} to={'/examples'} value={"examples"} label="Examples" />
+                <Tab component={Link} to={'/notionIntegration'} value={"notionIntegration"} label="Notion Integration" />
                 <Tab onClick={() => window.open('https://balancer.tools/')} value={"balancerTools"} label="balancer.tools" />
             </Tabs>
         </div>

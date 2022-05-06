@@ -22,6 +22,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MenuDrawer from './MenuDrawer/MenuDrawer';
 import Home from './../pages/home/Home';
 import Notion from '../pages/notion/Notion';
+import MUIExamples from '../pages/examples/MUIExamples';
 
 
 //Toggle color mode -> light, dark mode
@@ -158,6 +159,7 @@ export default function Dashboard() {
                                 <Route path="/" element={<Navigate replace to="/home" />} />
                                 <Route path="home" element={<Home classes={classes} darkState={(mode === 'dark') ? true : false} />} />
                                 <Route path="notionIntegration" element={<Notion classes={classes} darkState={(mode === 'dark') ? true : false} />} />
+                                <Route path="examples" element={<MUIExamples classes={classes} darkState={(mode === 'dark') ? true : false} />} />
                                 <Route path='balancerTools' component={() => {
                                     window.location.href = 'https://balancer.tools/';
                                     return null;

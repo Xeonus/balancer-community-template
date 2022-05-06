@@ -47,9 +47,9 @@ export default function NotionIntegration(props) {
         );
     } else {
         return (
-            <Alert severity="error">
-                <AlertTitle>Error</AlertTitle>
-                Could not read Notion data
+            <Alert severity="info">
+                <AlertTitle>Loading</AlertTitle>
+                Fetching data
             </Alert>
         );
 
